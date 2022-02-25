@@ -1,0 +1,15 @@
+dependencies {
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.ui:2.10.0"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.ui.shared:2.10.0"
+    implementation "org.eclipse.jdt:org.eclipse.jdt.core:$eclipse_version"
+    implementation "org.eclipse.jdt:org.eclipse.jdt.ui:$eclipse_version"
+
+    implementation project(':plugins:org.eclipse.emf.codegen.ecore')
+    implementation project(':plugins:org.eclipse.emf.codegen.ecore.xtext')
+    implementation project(':plugins:org.eclipse.emf.codegen.ecore.ui')
+    implementation project(':plugins:org.eclipse.emf.common.ui')
+    implementation project(':plugins:org.eclipse.emf.edit')
+    implementation project(':plugins:org.eclipse.emf.edit.ui')
+}
