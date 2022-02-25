@@ -1,0 +1,5 @@
+dependencies {
+    implementation "org.eclipse.xtext:org.eclipse.xtext.xbase.lib:$xtext_version"
+
+    implementation project(':plugins:org.eclipse.emf.common')
+}
