@@ -1,0 +1,13 @@
+dependencies {
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.core.resources:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui:$eclipse_version"
+
+    implementation project(":plugins:org.eclipse.emf.importer")
+    implementation project(":plugins:org.eclipse.emf.codegen")
+    implementation project(":plugins:org.eclipse.emf.codegen.ecore")
+    implementation project(":plugins:org.eclipse.emf.codegen.ecore.ui")
+    implementation project(":plugins:org.eclipse.emf.converter")
+    implementation project(":plugins:org.eclipse.emf.ant")
+}
+

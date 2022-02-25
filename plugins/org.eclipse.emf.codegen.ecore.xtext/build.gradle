@@ -1,0 +1,7 @@
+dependencies {
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext:$xtext_version"
+    implementation 'org.eclipse.emf:org.eclipse.emf.mwe2.runtime:2.12.2'
+
+    implementation project(':plugins:org.eclipse.emf.codegen.ecore')
+}

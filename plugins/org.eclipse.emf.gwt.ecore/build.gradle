@@ -1,0 +1,6 @@
+dependencies {
+    implementation "com.google.gwt:gwt-user:2.9.0"
+    implementation "com.google.appengine:appengine-api-1.0-sdk:2.0.3"
+
+    implementation project(":plugins:org.eclipse.emf.gwt.common")
+}

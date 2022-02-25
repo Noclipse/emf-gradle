@@ -1,0 +1,3 @@
+dependencies {
+    implementation "com.google.gwt:gwt-user:2.9.0"
+}

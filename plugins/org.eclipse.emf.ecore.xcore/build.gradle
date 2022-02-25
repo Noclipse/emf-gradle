@@ -1,0 +1,33 @@
+dependencies {
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.util:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.xbase:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.common.types:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.xbase.lib:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.ecore:$xtext_version"
+    implementation 'org.antlr:antlr-complete:3.5.2'
+    implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
+    implementation 'org.ow2.asm:asm:9.2'
+    implementation 'org.eclipse.emf:org.eclipse.emf.mwe2.runtime:2.12.2'
+
+    implementation project(':plugins:org.eclipse.emf.ecore')
+    implementation project(':plugins:org.eclipse.emf.ecore.xcore.lib')
+    implementation project(':plugins:org.eclipse.emf.codegen')
+    implementation project(':plugins:org.eclipse.emf.codegen.ecore')
+    implementation project(':plugins:org.eclipse.emf.codegen.ecore.xtext')
+}
+
+//org.antlr.runtime;bundle-version="[3.2.0,3.2.1)",
+//org.objectweb.asm;bundle-version="[5.0.0,11.0.0)";resolution:=optional
+//org.apache.log4j;bundle-version="[1.2.0,2.0.0)";visibility:=reexport,
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src'
+            srcDirs 'src-gen'
+            srcDirs 'xtend-gen'
+        }
+    }
+}
