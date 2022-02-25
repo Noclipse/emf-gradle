@@ -1,0 +1,10 @@
+dependencies {
+    implementation "org.eclipse.platform:org.eclipse.swt:$swt_version"
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.core.resources:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.jface.text:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.jface:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui.ide:$eclipse_version"
+    implementation project(':plugins:org.eclipse.emf.common')
+}

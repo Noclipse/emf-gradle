@@ -110,6 +110,8 @@ public class ExtendedComboBoxCellEditor extends ComboBoxCellEditor
 
   public static <T> String[] createItems(List<T> list, ILabelProvider labelProvider, String filter, boolean sorted)
   {
+    if(sorted) list =  new ArrayList<T>(list);
+
     String[] result;
 
     if (filter != null && filter.length() > 0)
@@ -226,9 +228,10 @@ public class ExtendedComboBoxCellEditor extends ComboBoxCellEditor
    *
    * @since 2.14
    */
+
   public ExtendedComboBoxCellEditor(Composite composite, List<?> list, ILabelProvider labelProvider, boolean sorted, int style, final ValueHandler valueHandler, boolean autoShowDropDownList)
   {
-    super(composite, createItems(sorted ? list = new ArrayList<Object>(list) : list, labelProvider, null, sorted), style);
+    super(composite, createItems(list, labelProvider, null, sorted), style);
     this.originalList = list;
     this.list = list;
     this.labelProvider = labelProvider;
@@ -344,6 +347,7 @@ public class ExtendedComboBoxCellEditor extends ComboBoxCellEditor
         }
       });
   }
+
 
   protected void refreshItems(String filter)
   {
