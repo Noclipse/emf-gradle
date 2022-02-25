@@ -1,0 +1,39 @@
+buildscript {
+    ext {
+        osgi_platform = 'cocoa.macosx.x86_64'
+        swt_version = '[3.0.0,4)'
+    }
+}
+
+
+configurations.all {
+    resolutionStrategy {
+        dependencySubstitution {
+            substitute module('org.eclipse.platform:org.eclipse.swt.${osgi.platform}') with module("org.eclipse.platform:org.eclipse.swt.$osgi_platform:$swt_version")
+        }
+    }
+}
+
+dependencies {
+    implementation "org.eclipse.platform:org.eclipse.swt:$swt_version"
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.core.resources:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.jface.text:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.jface:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui.ide:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui.views:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui.workbench:$eclipse_version"
+
+    implementation project(':plugins:org.eclipse.emf.common')
+    implementation project(':plugins:org.eclipse.emf.common.ui')
+    implementation project(':plugins:org.eclipse.emf.ecore')
+    implementation project(':plugins:org.eclipse.emf.edit')
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}

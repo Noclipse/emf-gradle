@@ -2,3 +2,16 @@
 */*/target/
 **/.oracle_jre_usage
 .DS_Store
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# IntelliJ IDEA
+*.iml
+.idea
+
+# Eclipse
+.project

@@ -1,0 +1,61 @@
+
+buildscript {
+    ext {
+        osgi_platform = 'cocoa.macosx.x86_64'
+        swt_version = '[3.0.0,4)'
+        eclipse_version = '[3.6.0,4.0.0)'
+    }
+}
+
+
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+group 'org.eclipse.emf'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy-all:3.0.5'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+    java {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            java {
+                srcDir 'src'
+            }
+        }
+    }
+    configurations.all {
+        resolutionStrategy {
+            dependencySubstitution {
+                substitute module('org.eclipse.platform:org.eclipse.swt.${osgi.platform}') with module("org.eclipse.platform:org.eclipse.swt.$osgi_platform:$swt_version")
+            }
+        }
+    }
+
+}
+
+

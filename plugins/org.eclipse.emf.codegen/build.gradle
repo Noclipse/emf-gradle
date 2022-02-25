@@ -1,0 +1,15 @@
+dependencies {
+    implementation 'org.eclipse.core:runtime:3.10.0-v20140318-2214'
+    implementation 'org.eclipse.core:org.eclipse.core.resources:3.7.100'
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:3.22.0'
+    implementation project(':plugins:org.eclipse.emf.common')
+//    implementation 'org.eclipse.jdt:org.eclipse.jdt.ui:3.25.0'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}

@@ -1,0 +1,5 @@
+dependencies {
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    implementation project(':plugins:org.eclipse.emf.common')
+    implementation project(':plugins:org.eclipse.emf.ecore')
+}
