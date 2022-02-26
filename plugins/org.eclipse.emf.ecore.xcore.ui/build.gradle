@@ -1,0 +1,49 @@
+dependencies {
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui.editors:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui.ide:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.core.expressions:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.compare:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.debug.ui:$eclipse_version"
+
+    implementation "org.eclipse.xtext:org.eclipse.xtext.builder:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.common.types.ui:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.ide:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.ui:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.ui.codetemplates:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.ui.codetemplates.ui:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.ui.shared:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.xbase:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.xbase.ide:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.xbase.lib:$xtext_version"
+    implementation "org.eclipse.xtext:org.eclipse.xtext.xbase.ui:$xtext_version"
+
+    implementation "org.eclipse.jdt:org.eclipse.jdt.core:$eclipse_version"
+    implementation "org.eclipse.jdt:org.eclipse.jdt.ui:$eclipse_version"
+    implementation "org.eclipse.jdt:org.eclipse.jdt.core.manipulation:1.15.100"
+    implementation "org.eclipse.jdt:org.eclipse.jdt.debug.ui:$eclipse_version"
+
+    implementation 'org.antlr:antlr-runtime:[3.2.0,4.0.0)'
+
+    implementation project(':plugins:org.eclipse.emf.common')
+    implementation project(':plugins:org.eclipse.emf.ecore.edit')
+    implementation project(':plugins:org.eclipse.emf.ecore.editor')
+    implementation project(':plugins:org.eclipse.emf.codegen')
+    implementation project(':plugins:org.eclipse.emf.codegen.ecore.xtext.ui')
+    implementation project(':plugins:org.eclipse.emf.codegen.ecore')
+    implementation project(':plugins:org.eclipse.emf.codegen.ecore.ui')
+    implementation project(':plugins:org.eclipse.emf.ecore.xcore')
+    implementation project(':plugins:org.eclipse.emf.edit')
+    implementation project(':plugins:org.eclipse.emf.edit.ui')
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'src'
+            srcDirs 'src-gen'
+            srcDirs 'xtend-gen'
+        }
+    }
+}
