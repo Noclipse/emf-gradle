@@ -4,7 +4,7 @@ buildscript {
         osgi_platform = 'cocoa.macosx.x86_64'
         swt_version = '[3.0.0,4)'
         eclipse_version = '[3.6.0,4.0.0)'
-        xtext_version = '[2.13.0,3.0.0)'
+        xtext_version = '[2.10.0,3.0.0)'
     }
 }
 
