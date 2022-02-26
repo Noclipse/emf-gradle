@@ -48,7 +48,7 @@ import org.eclipse.xtext.resource.containers.IAllContainersState;
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
 import org.eclipse.xtext.service.SingletonBinding;
 import org.eclipse.xtext.ui.LanguageSpecific;
-import org.eclipse.xtext.ui.UIBindings;
+//import org.eclipse.xtext.ui.UIBindings;
 import org.eclipse.xtext.ui.codetemplates.ui.AccessibleCodetemplatesActivator;
 import org.eclipse.xtext.ui.codetemplates.ui.partialEditing.IPartialEditingContentAssistContextFactory;
 import org.eclipse.xtext.ui.codetemplates.ui.partialEditing.PartialEditingContentAssistContextFactory;
@@ -110,6 +110,9 @@ import org.eclipse.xtext.xbase.ui.refactoring.XbaseReferenceUpdater;
  */
 @SuppressWarnings("all")
 public abstract class AbstractXcoreUiModule extends DefaultXbaseUiModule {
+
+	// From class org.eclipse.xtext.ui.UIBindings
+	public static final String COMPARE_VIEWER_TITLE = "org.eclipse.xtext.ui.compare.DefaultViewerCreator.COMPARE_VIEWER_TITLE";
 
 	public AbstractXcoreUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
@@ -381,7 +384,7 @@ public abstract class AbstractXcoreUiModule extends DefaultXbaseUiModule {
 	
 	// contributed by org.eclipse.xtext.xtext.generator.ui.compare.CompareFragment2
 	public void configureCompareViewerTitle(Binder binder) {
-		binder.bind(String.class).annotatedWith(Names.named(UIBindings.COMPARE_VIEWER_TITLE)).toInstance("Xcore Compare");
+		binder.bind(String.class).annotatedWith(Names.named(COMPARE_VIEWER_TITLE)).toInstance("Xcore Compare");
 	}
 	
 }
