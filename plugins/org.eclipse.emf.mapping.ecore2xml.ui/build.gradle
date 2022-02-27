@@ -1,5 +1,17 @@
 dependencies {
     implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.core.resources:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui.ide:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui.views:$eclipse_version"
 
     implementation project(':plugins:org.eclipse.emf.common')
+    implementation project(':plugins:org.eclipse.emf.common.ui')
+    implementation project(':plugins:org.eclipse.emf.ecore.edit')
+    implementation project(':plugins:org.eclipse.emf.ecore.xmi')
+    implementation project(':plugins:org.eclipse.emf.edit')
+    implementation project(':plugins:org.eclipse.emf.edit.ui')
+    implementation project(':plugins:org.eclipse.emf.mapping')
+    implementation project(':plugins:org.eclipse.emf.mapping.ecore2ecore')
+    implementation project(':plugins:org.eclipse.emf.mapping.ecore2xml')
 }
