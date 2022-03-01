@@ -6,12 +6,25 @@ buildscript {
         eclipse_version = '[3.6.0,4.0.0)'
         xtext_version = '[2.10.0,3.0.0)'
     }
+
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.6"
+        classpath "org.kordamp.gradle:sourcexref-gradle-plugin:0.47.0"
+    }
 }
 
 
 plugins {
     id 'groovy'
     id 'java'
+    id 'pmd'
+    id "org.kordamp.gradle.source-xref" version "0.47.0"
+    id "com.github.spotbugs" version "5.0.6"
 }
 
 group 'org.eclipse.emf'
@@ -34,6 +47,9 @@ test {
 
 subprojects {
     apply plugin: 'java'
+    apply plugin: 'org.kordamp.gradle.source-xref'
+    apply plugin: 'pmd'
+    apply plugin: 'com.github.spotbugs'
 
     repositories {
         mavenCentral()
@@ -57,6 +73,23 @@ subprojects {
         }
     }
 
+
+    pmd {
+        consoleOutput = true
+        ignoreFailures = true
+        toolVersion = "6.43.0"
+        rulesMinimumPriority = 5
+        ruleSets = ["category/java/errorprone.xml", "category/java/security.xml"]
+    }
+
+    spotbugs {
+        ignoreFailures = true
+    }
+
+    spotbugsMain {
+        reports {
+            xml.enabled = false
+            html.enabled = true
+        }
+    }
 }
-
-
