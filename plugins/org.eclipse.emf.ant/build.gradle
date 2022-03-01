@@ -10,3 +10,11 @@ dependencies {
     implementation project(':plugins:org.eclipse.emf.importer')
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs 'src'
+            srcDirs 'tasks'
+        }
+    }
+}
