@@ -1,0 +1,39 @@
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
+    testImplementation "org.eclipse.platform:org.eclipse.core.resources:$eclipse_version"
+    testImplementation 'org.eclipse.emf:org.eclipse.xsd:2.18.0'
+
+    testImplementation project(':plugins:org.eclipse.emf.edit')
+    testImplementation project(':plugins:org.eclipse.emf.ecore.change')
+
+    testImplementation project(':plugins:org.eclipse.emf.edit.ui')
+    testImplementation project(':tests:org.eclipse.emf.test.common')
+    testImplementation project(':plugins:org.eclipse.emf.common')
+    testImplementation project(':plugins:org.eclipse.emf.ecore')
+
+    testImplementation project(':plugins:org.eclipse.emf.ecore.edit')
+    testImplementation project(':plugins:org.eclipse.emf.ecore.xmi')
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = []
+        }
+    }
+
+    test {
+        java {
+            srcDirs = ['src']
+        }
+    }
+    /*
+    integrationTest {
+        java {
+            srcDirs = ['integrationTest']
+        }
+    }
+
+     */
+}
