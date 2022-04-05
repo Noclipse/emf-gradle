@@ -44,6 +44,6 @@ include 'plugins:org.eclipse.emf.mapping.ui'
 //include 'plugins:org.eclipse.emf.oda'
 //include 'plugins:org.eclipse.emf.oda.ecore'
 //include 'examples:org.eclipse.emf.examples.library'
-include 'tests:org.eclipse.emf.test.common'
-include 'tests:org.eclipse.emf.test.core'
+//include 'tests:org.eclipse.emf.test.common'
+//include 'tests:org.eclipse.emf.test.core'
 
