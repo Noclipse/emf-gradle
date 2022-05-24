@@ -1,4 +1,5 @@
 = emf-gradle
-image:https://app.codacy.com/project/badge/Grade/34fd25ec849b4fc7b4bf308632b1cd8d["Codacy code quality", link="https://www.codacy.com/gh/sunye/emf-gradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=sunye/emf-gradle&utm_campaign=Badge_Grade"]
+
+image::https://app.codacy.com/project/badge/Grade/34fd25ec849b4fc7b4bf308632b1cd8d["Codacy code quality", link="https://www.codacy.com/gh/sunye/emf-gradle/dashboard?utm_source=github.com&utm_medium=referral&utm_content=sunye/emf-gradle&utm_campaign=Badge_Grade"]
 
 EMF build using Gradle
