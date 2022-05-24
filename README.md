@@ -1,0 +1,2 @@
+# emf-gradle
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/07bbcbbce1aa4d83a3107f0c6314f455)](https://app.codacy.com/gh/sunye/emf-gradle?utm_source=github.com&utm_medium=referral&utm_content=sunye/emf-gradle&utm_campaign=Badge_Grade_Settings)
