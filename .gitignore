@@ -1,5 +1,6 @@
 *.swp
 */*/target/
+*/*/*/target/
 **/.oracle_jre_usage
 .DS_Store
 
@@ -16,3 +17,7 @@ build
 
 # Eclipse
 .project
+.settings
+
+# Tych
+**/.tycho-consumer-pom.xml

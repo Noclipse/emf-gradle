@@ -65,33 +65,33 @@
 
     <module>../../../tests/org.eclipse.emf.tests-feature</module>
 
-    <module>../../../../org.eclipse.xsd/features/org.eclipse.xsd.example-feature</module>
+    <module>../../../features/org.eclipse.xsd.example-feature</module>
 
-    <module>../../../../org.eclipse.xsd/features/org.eclipse.xsd-feature</module>
-    <module>../../../../org.eclipse.xsd/features/org.eclipse.xsd.ecore.converter-feature</module>
-    <module>../../../../org.eclipse.xsd/features/org.eclipse.xsd.edit-feature</module>
-    <module>../../../../org.eclipse.xsd/features/org.eclipse.xsd.editor-feature</module>
-    <module>../../../../org.eclipse.xsd/features/org.eclipse.xsd.license-feature</module>
-    <module>../../../../org.eclipse.xsd/features/org.eclipse.xsd.mapping-feature</module>
-    <module>../../../../org.eclipse.xsd/features/org.eclipse.xsd.mapping.editor-feature</module>
-    <module>../../../../org.eclipse.xsd/features/org.eclipse.xsd.sdk-feature</module>
+    <module>../../../features/org.eclipse.xsd-feature</module>
+    <module>../../../features/org.eclipse.xsd.ecore.converter-feature</module>
+    <module>../../../features/org.eclipse.xsd.edit-feature</module>
+    <module>../../../features/org.eclipse.xsd.editor-feature</module>
+    <module>../../../features/org.eclipse.xsd.license-feature</module>
+    <module>../../../features/org.eclipse.xsd.mapping-feature</module>
+    <module>../../../features/org.eclipse.xsd.mapping.editor-feature</module>
+    <module>../../../features/org.eclipse.xsd.sdk-feature</module>
 
-    <module>../../../../org.eclipse.xsd/doc/org.eclipse.xsd.doc-feature</module>
+    <module>../../../doc/org.eclipse.xsd.doc-feature</module>
 
   </modules>
 
   <build>
     <plugins>
       <plugin>
-        <groupId>org.eclipse.tycho.extras</groupId>
-        <artifactId>tycho-source-feature-plugin</artifactId>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-source-plugin</artifactId>
         <version>${tycho-version}</version>
         <executions>
           <execution>
             <phase>package</phase>
             <id>generate-source-feature</id>
             <goals>
-              <goal>source-feature</goal>
+              <goal>feature-source</goal>
             </goals>
             <configuration>
               <excludes>
@@ -167,10 +167,10 @@
 
   <profiles>
     <profile>
-      <id>pack-and-sign</id>
+      <id>eclipse-sign</id>
       <activation>
         <property>
-          <name>PACK_AND_SIGN</name>
+          <name>ECLIPSE_SIGN</name>
           <value>true</value>
         </property>
       </activation>
