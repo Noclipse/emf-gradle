@@ -1,6 +1,6 @@
 dependencies {
-    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ant.core:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,3.13.0)"
+    implementation "org.eclipse.platform:org.eclipse.ant.core:[3.4.0,3.5.0)"
     implementation "org.apache.ant:ant:[1.7.0,2.0.0)"
 
     implementation project(':plugins:org.eclipse.emf.common')

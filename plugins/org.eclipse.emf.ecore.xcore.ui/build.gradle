@@ -1,11 +1,17 @@
 dependencies {
-    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui.editors:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui.ide:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.core.expressions:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.compare:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.debug.ui:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui:[3.108.0,3.109.0)"
+    implementation 'org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,3.13.0)'
+    implementation 'org.eclipse.platform:org.eclipse.core.resources:[3.0.0,3.13.0)'
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:[3.7.0,3.13.0)'
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.ui:[3.7.0,3.13.0)'
+
+
+
+    implementation "org.eclipse.platform:org.eclipse.ui.editors:[3.0.0,3.13.0)"
+    implementation "org.eclipse.platform:org.eclipse.ui.ide:[3.0.0,3.13.0)"
+    implementation "org.eclipse.platform:org.eclipse.core.expressions:[3.0.0,3.6.0)"
+    implementation "org.eclipse.platform:org.eclipse.compare:[3.0.0,3.13.0)"
+    implementation "org.eclipse.platform:org.eclipse.debug.ui:[3.0.0,3.13.0)"
 
     implementation "org.eclipse.xtext:org.eclipse.xtext.builder:$xtext_version"
     implementation "org.eclipse.xtext:org.eclipse.xtext.common.types.ui:$xtext_version"
@@ -19,10 +25,8 @@ dependencies {
     implementation "org.eclipse.xtext:org.eclipse.xtext.xbase.lib:$xtext_version"
     implementation "org.eclipse.xtext:org.eclipse.xtext.xbase.ui:$xtext_version"
 
-    implementation "org.eclipse.jdt:org.eclipse.jdt.core:$eclipse_version"
-    implementation "org.eclipse.jdt:org.eclipse.jdt.ui:$eclipse_version"
     implementation "org.eclipse.jdt:org.eclipse.jdt.core.manipulation:1.15.100"
-    implementation "org.eclipse.jdt:org.eclipse.jdt.debug.ui:$eclipse_version"
+    implementation "org.eclipse.jdt:org.eclipse.jdt.debug.ui:[3.7.0,3.13.0)"
 
     implementation 'org.antlr:antlr-runtime:[3.2.0,4.0.0)'
 

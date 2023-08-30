@@ -1,8 +1,10 @@
 dependencies {
-    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.core.resources:$eclipse_version"
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:[3.0.0, 3.13.0)'
+    implementation 'org.eclipse.platform:org.eclipse.core.expressions:[3.0.0,3.6.0)'
+    implementation 'org.eclipse.platform:org.eclipse.core.jobs:[3.2.0,3.12.0)'
+    implementation "org.eclipse.platform:org.eclipse.core.resources:[3.0.0,3.13.0)"
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,3.13.0)"
+    implementation 'org.eclipse.platform:org.eclipse.text:[3.6.0,3.7.0)'
 
-    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:3.22.0'
     implementation project(':plugins:org.eclipse.emf.common')
 }
-

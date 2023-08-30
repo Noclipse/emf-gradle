@@ -1,9 +1,11 @@
 dependencies {
-    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.core.resources:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.swt:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui:$eclipse_version"
-    implementation "org.eclipse.jdt:org.eclipse.jdt.core:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.ui:[3.108.0,3.109.0)"
+    implementation 'org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,3.13.0)'
+    implementation 'org.eclipse.platform:org.eclipse.core.resources:[3.0.0,3.13.0)'
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:[3.7.0,3.13.0)'
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.ui:[3.7.0,3.13.0)'
+
+    implementation "org.eclipse.platform:org.eclipse.swt:$swt_version"
     implementation "org.eclipse.xtext:org.eclipse.xtext.xbase:$xtext_version"
     implementation "org.eclipse.xtext:org.eclipse.xtext.ui:2.10.0"
 

@@ -1,9 +1,22 @@
+/*
+    Eclipse versions and bytecode compatibility:
 
+    Since version 4.25 -  Java 17 or newer JRE/JDK is required
+    Since version 4.17 -  Java 11 or newer JRE/JDK is required
+    Since version 4.6 (Neon) - Java 8 or newer JRE/JDK is required
+ */
 buildscript {
     ext {
+        eclipse_platform_version = '3.12.0!!'
+
+        eclipse_ui_version = '[3.100.0, 3.124.0]'
+        eclipse_version = '4.25.0!!'
+        jface_text_version = '[3.0.0,3.12.0]'
+        jface_version = '[3.0.0,3.30.0]'
+        junit_version = '[5.7.0]'
         osgi_platform = 'cocoa.macosx.x86_64'
-        swt_version = '[3.0.0,4)'
-        eclipse_version = '[3.6.0,4.0.0)'
+        swt_version = '[3.0.0,3.124.0)'
+        ui_ide_version = '[3.12.0,3.18.0]'
         xtext_version = '[2.10.0,3.0.0)'
     }
 
@@ -15,6 +28,7 @@ buildscript {
     dependencies {
         classpath "com.github.spotbugs.snom:spotbugs-gradle-plugin:5.0.6"
         classpath "org.kordamp.gradle:sourcexref-gradle-plugin:0.47.0"
+        classpath 'org.kordamp.gradle:enforcer-gradle-plugin:0.13.0'
     }
 }
 
@@ -22,11 +36,13 @@ buildscript {
 plugins {
     id 'groovy'
     id 'java'
+    id 'org.kordamp.gradle.project-enforcer' version "0.13.0"
     id 'pmd'
     id "org.kordamp.gradle.source-xref" version "0.47.0"
     id "com.github.spotbugs" version "5.0.6"
     id "org.sonarqube" version "3.3"
 }
+
 
 group 'org.eclipse.emf'
 version '1.0-SNAPSHOT'
@@ -38,9 +54,18 @@ repositories {
 
 dependencies {
     implementation 'org.codehaus.groovy:groovy-all:3.0.5'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:${junit_version}'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:${junit_version}'
 }
+
+enforce {
+    allprojects {
+        rule(enforcer.rules.EnforceBytecodeVersion) { r ->
+            r.maxJdkVersion = '1.8'
+        }
+    }
+}
+
 
 sonarqube {
     properties {
@@ -50,12 +75,14 @@ sonarqube {
     }
 }
 
+
 test {
     useJUnitPlatform()
 }
 
 subprojects {
     apply plugin: 'java'
+    apply plugin: 'org.kordamp.gradle.project-enforcer'
     apply plugin: 'org.kordamp.gradle.source-xref'
     apply plugin: 'pmd'
     apply plugin: 'com.github.spotbugs'
@@ -63,10 +90,17 @@ subprojects {
     repositories {
         mavenCentral()
     }
+
     java {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    tasks.withType(JavaCompile).configureEach {
+        options.deprecation = false
+        options.warnings = false
+    }
+
     sourceSets {
         main {
             java {
@@ -79,9 +113,25 @@ subprojects {
             dependencySubstitution {
                 substitute module('org.eclipse.platform:org.eclipse.swt.${osgi.platform}') with module("org.eclipse.platform:org.eclipse.swt.$osgi_platform:$swt_version")
             }
+            force 'org.eclipse.jdt:org.eclipse.jdt.core:[3.7.0,3.13.0)'
+            force 'org.eclipse.platform:org.eclipse.jface:[3.0.0,3.30.0)'
+            force 'org.eclipse.platform:org.eclipse.ui.workbench:[0.0.0,3.111.0)'
+            force 'org.eclipse.platform:org.eclipse.core.commands:[3.0.0,3.11.0)'
+            force 'org.eclipse.platform:org.eclipse.core.contenttype:[3.0.0,3.7.0)'
+            force 'org.eclipse.platform:org.eclipse.core.expressions:[3.0.0,3.6.0)'
+            force 'org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,3.13.0)'
+            force 'org.eclipse.platform:org.eclipse.core.resources:[3.0.0,3.13.0)'
+            force 'org.eclipse.platform:org.eclipse.core.jobs:[3.2.0,3.12.0)'
+            force 'org.eclipse.platform:org.eclipse.text:[3.6.0,3.9.0)'
+            force 'org.eclipse.platform:org.eclipse.jface.text:[3.11.0,3.13.0)'
+            force 'org.eclipse.platform:org.eclipse.core.filebuffers:[3.6.0,3.7.0)'
+            force 'org.eclipse.platform:org.eclipse.ui.ide:[3.12.0,3.13.0)'
+            force 'org.eclipse.platform:org.eclipse.ui.editors:[3.10.0,3.11.0)'
+            force 'org.eclipse.platform:org.eclipse.ui.workbench.texteditor:[3.10.0,3.11.0)'
+            force 'org.eclipse.platform:org.eclipse.ui.views:[3.8.0, 3.9.0)'
+
         }
     }
-
 
     pmd {
         consoleOutput = true
@@ -101,4 +151,6 @@ subprojects {
             html.enabled = true
         }
     }
+
+    task allDeps(type: DependencyReportTask) {}
 }

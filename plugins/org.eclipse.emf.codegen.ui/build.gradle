@@ -1,16 +1,18 @@
 dependencies {
-    implementation "org.eclipse.platform:org.eclipse.core.runtime:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.core.resources:$eclipse_version"
-    implementation "org.eclipse.jdt:org.eclipse.jdt.core:$eclipse_version"
-    implementation "org.eclipse.jdt:org.eclipse.jdt.launching:$eclipse_version"
-    implementation "org.eclipse.jdt:org.eclipse.jdt.ui:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.jface.text:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui.editors:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui.ide:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui.views:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui.workbench:$eclipse_version"
-    implementation "org.eclipse.platform:org.eclipse.ui.workbench.texteditor:$eclipse_version"
+    implementation "org.eclipse.platform:org.eclipse.core.resources:[3.0.0,3.13.0)"
+    implementation "org.eclipse.platform:org.eclipse.core.runtime:[3.3.0,3.13.0)"
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:[3.0.0,3.13.0)'
+
+
+    implementation "org.eclipse.jdt:org.eclipse.jdt.launching:[0.0.0, 3.10.0)"
+    implementation "org.eclipse.jdt:org.eclipse.jdt.ui:[0.0.0, 3.13.0)"
+    implementation "org.eclipse.platform:org.eclipse.jface.text:$jface_text_version"
+    implementation "org.eclipse.platform:org.eclipse.ui:[3.0.0,3.109.0)"
+    implementation "org.eclipse.platform:org.eclipse.ui.editors:[3.0.0,3.109.0)"
+    implementation "org.eclipse.platform:org.eclipse.ui.ide:[3.0.0,3.109.0)"
+    implementation "org.eclipse.platform:org.eclipse.ui.views:[3.0.0,3.109.0)"
+    implementation "org.eclipse.platform:org.eclipse.ui.workbench:[3.0.0,3.109.0)"
+    implementation "org.eclipse.platform:org.eclipse.ui.workbench.texteditor:[3.0.0,3.109.0)"
 
     implementation project(":plugins:org.eclipse.emf.codegen")
     implementation project(":plugins:org.eclipse.emf.common.ui")
